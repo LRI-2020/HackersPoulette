@@ -35,9 +35,8 @@ listenToForm();
                 <span class="error"><?php displayErrors("lastName"); ?></span>
 
                 <input class="form-control" type="text" id="lastName" value="" name="lastName">
-
-                <p class="my-2 py-1">Gender :
-                    <span class="error"><?php displayErrors("gender"); ?></span>
+                <diV>
+                    <label class="form-label" for="gender"> Gender : </label>
                     <input type="radio" id="Female" value="F" name="gender">
                     <label class="form-label" for="Female">Female</label>
 
@@ -46,7 +45,9 @@ listenToForm();
 
                     <input type="radio" id="Other" value="O" name="gender">
                     <label class="form-label" for="Other">Other</label>
-                </p>
+                    <span class="error"><?php displayErrors("gender"); ?></span>
+
+                </diV>
 
 
                 <label class="form-label" for="email"> Email : </label>
@@ -54,24 +55,31 @@ listenToForm();
 
                 <input class="form-control" type="email" id="email" value="" name="email">
 
-                <p class="my-2 py-1">Country :
+                <div>
                     <span class="error"><?php displayErrors("country"); ?></span>
-                    <select name="country" class="col-4">
+                    <label class="form-label" for="country"> Country : </label>
+                    <select id="country" name="country" class="col-4">
                         <?php displayCountriesOpt();
                         ?>
                     </select>
-                </p>
+                </div>
 
-                <p class="my-2 py-1">Subject:
+                <div>
                     <span class="error"><?php displayErrors("subject"); ?></span>
-                    <select name="subject">
+                    <label class="form-label" for="subject"> Subject : </label>
+                    <select id="subject" name="subject">
                         <option value="Order">Order</option>
                         <option value="Delivery">Delivery</option>
                         <option value="Other" selected="selected">Other</option>
                     </select>
-                </p>
-                <span class="error"><?php displayErrors("message"); ?></span>
-                <textarea class="col-12" id="message" name="message"></textarea>
+                </div>
+
+                <div>
+                    <label class="form-label" for="message"> Message : </label>
+                    <span class="error"><?php displayErrors("message"); ?></span>
+                    <textarea class="col-12" id="message" name="message"></textarea>
+                </div>
+
 
             </div>
 
@@ -353,12 +361,12 @@ function hasError($errors)
 function getErrors()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $lastNameErr = empty($_POST["lastName"]) ? "Last name is required" : "";
-        $firstNameErr = empty($_POST["firstName"]) ? "First name is required" : "";
-        $genderErr = empty($_POST["gender"]) ? "Gender is required" : "";
-        $emailErr = empty($_POST["email"]) ? "Email is required" : "";
-        $countryErr = empty($_POST["country"]) ? "Country is required" : "";
-        $messageErr = empty($_POST["message"]) ? "Message is required" : "";
+        $lastNameErr = empty($_POST["lastName"]) ? "* Last name is required" : "";
+        $firstNameErr = empty($_POST["firstName"]) ? "* First name is required" : "";
+        $genderErr = empty($_POST["gender"]) ? "* Gender is required" : "";
+        $emailErr = empty($_POST["email"]) ? "* Email is required" : "";
+        $countryErr = empty($_POST["country"]) ? "* Country is required" : "";
+        $messageErr = empty($_POST["message"]) ? "* Message is required" : "";
         return array(
             "lastName" => $lastNameErr,
             "firstName" => $firstNameErr,
@@ -408,11 +416,6 @@ function listenToForm()
                 echo '<div>Message: ' . $e->getMessage() . '</div>';
             }
         }
-
-        else{
-            header('Location: errorMessage.php');
-        }
-
     }
 
 }

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dc82666-eec0-4e7b-bf2c-711a54b26158" name="Changes" comment="add honeyPot" />
+    <list default="true" id="6dc82666-eec0-4e7b-bf2c-711a54b26158" name="Changes" comment="correct bug when errors">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +41,11 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/mailjet/mailjet-apiv3-php" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
@@ -62,6 +69,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "//wsl$/Ubuntu/var/www/html/AZStore",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
@@ -87,6 +95,7 @@
       <updated>1699262507901</updated>
       <workItem from="1699262509008" duration="18072000" />
       <workItem from="1699343230029" duration="2530000" />
+      <workItem from="1699345795372" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="create first app evrsion">
       <option name="closed" value="true" />
@@ -112,16 +121,37 @@
       <option name="project" value="LOCAL" />
       <updated>1699345540333</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first main commit">
+      <option name="closed" value="true" />
+      <created>1699345868593</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699345868593</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create first app evrsion" />
     <MESSAGE value="add mock up" />
     <MESSAGE value="add honeyPot" />
-    <option name="LAST_COMMIT_MESSAGE" value="add honeyPot" />
+    <MESSAGE value="first main commit" />
+    <MESSAGE value="correct bug when errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct bug when errors" />
   </component>
 </project>
