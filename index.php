@@ -25,6 +25,7 @@ listenToForm();
     <main>
         <form id="supportForm" class="mx-auto my-4 p-2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
               method="post">
+            <input type="text" class="honeyPot" name="honeyPot">
             <div class="mb-3">
                 <label class="form-label" for="firstName"> First name : </label>
                 <span class="error"><?php displayErrors("firstName"); ?></span>
@@ -367,9 +368,7 @@ function getErrors()
             "message" => $messageErr
         );
     }
-
     return array();
-
 }
 
 function displayErrors($name)
@@ -386,7 +385,7 @@ function listenToForm()
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (!hasError(getErrors())) {
+        if (!hasError(getErrors()) && !isRobot()) {
 
             $lastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING);
             $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING);
@@ -410,7 +409,17 @@ function listenToForm()
             }
         }
 
+        else{
+            header('Location: errorMessage.php');
+        }
+
     }
+
+}
+
+function isRobot()
+{
+    return !empty($_POST["honeyPot"]);
 
 }
 
