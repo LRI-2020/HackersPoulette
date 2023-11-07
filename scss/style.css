@@ -1,0 +1,19 @@
+body {
+  background-color: aliceblue;
+}
+
+form {
+  width: 25%;
+  border: black solid 1px;
+  border-radius: 15px;
+}
+
+.error {
+  color: red;
+}
+
+.honeyPot {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
